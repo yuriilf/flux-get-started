@@ -32,3 +32,12 @@ metadata:
 spec:
   nets:
     - 10.10.30.0/24
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkSet
+metadata:
+  name: onemorenewset
+  namespace: test
+spec:
+  nets:
+    - 10.10.10.0/24
