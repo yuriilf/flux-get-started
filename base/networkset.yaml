@@ -27,7 +27,7 @@ spec:
 apiVersion: projectcalico.org/v3
 kind: NetworkSet
 metadata:
-  name: newSet
+  name: newset
   namespace: test
 spec:
   nets:
