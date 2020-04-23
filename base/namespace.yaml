@@ -4,3 +4,4 @@ metadata:
   name: test
   labels:
     networking/namespace: test
+    newlabel: test1
