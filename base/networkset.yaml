@@ -23,3 +23,12 @@ spec:
     - action: Allow
       destination:
         selector: external/chproxy == 'allow'
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkSet
+metadata:
+  name: newSet
+  namespace: test
+spec:
+  nets:
+    - 10.10.30.0/24
