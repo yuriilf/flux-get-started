@@ -1,0 +1,25 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkSet
+metadata:
+  name: chproxy
+  namespace: test
+  labels:
+    external/chproxy: allow
+spec:
+  nets:
+    - 10.10.30.0/24
+    - 10.20.31.0/24
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-chproxy
+  namespace: test
+spec:
+  selector: role == 'nginx'
+  types:
+    - Egress
+  egress:
+    - action: Allow
+      destination:
+        selector: external/chproxy == 'allow'
