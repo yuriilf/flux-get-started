@@ -98,22 +98,3 @@ spec:
       protocol: TCP
     - port: 8443
       protocol: TCP
----
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: monitoring-gatekeeper-ingress-8888
-spec:
-  podSelector:
-    matchLabels:
-      app: gatekeeper-operator
-  policyTypes:
-    - Ingress
-  ingress:
-    - from:
-        - namespaceSelector:
-            matchLabels:
-              networking/namespace: monitoring
-      ports:
-        - protocol: TCP
-          port: 8888
