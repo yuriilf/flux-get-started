@@ -1,5 +1,5 @@
 namespace: test
 resources:
 - namespace.yaml
-- gatekeeper
+# - gatekeeper
 
